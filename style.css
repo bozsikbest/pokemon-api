@@ -1,3 +1,17 @@
 h1 {
     color: red;
+    text-align: center;
+}
+div {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    max-width: fit-content;
+    text-align: center;
+    margin-left: 46%;
+    margin-right: auto;
+    background-image: linear-gradient(rgb(201,201,201), rgb(201,201,201)), url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png');
+    background-size: 250%;
+    background-position: center;
+
 }
