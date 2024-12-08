@@ -2,16 +2,32 @@ h1 {
     color: red;
     text-align: center;
 }
-div {
+.pokemon {
+    cursor: pointer;
+    font-weight: bold;
     border: 1px solid black;
     border-radius: 15px;
     padding: 5px;
     max-width: fit-content;
     text-align: center;
-    margin-left: 46%;
-    margin-right: auto;
-    background-image: linear-gradient(rgb(201,201,201), rgb(201,201,201)), url('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png');
-    background-size: 250%;
-    background-position: center;
+    box-shadow: 2px 2px 8px 0px #0000007d;
+  background-image: linear-gradient(rgb(201 201 201), rgb(247 247 247)),
+    url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png);
+  background-blend-mode: hard-light;
+  background-size: 250%;
+  background-position: center;
+  
+}
 
+.pokemon:hover{
+    box-shadow: 5px 5px 12px 0px #c521e6;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center; 
+    align-content: center;
 }

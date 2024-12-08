@@ -1,17 +1,21 @@
 //console.log("hello")
 var count =1
 
-function asd(text, src){
-    const img = document.createElement("img")
-    img.src=src
-    const asd=document.createElement("div")
+function asd(text, src) {
+    const img = document.createElement("img");
+    img.src = src;
+
+    const asd = document.createElement("div");
+    asd.textContent = text.charAt(0).toUpperCase() + text.slice(1);;
+    asd.append(document.createElement("br"));
+    asd.append(img);
+    asd.classList.add("pokemon");
+
+    asd.style.backgroundImage = 
+        "linear-gradient(rgb(201 201 201), rgb(247 247 247)), url('" + src + "')";
     
-    asd.textContent = text
-    asd.append(document.createElement("br"))
-    asd.append(img)
-    document.body.appendChild(asd)
-    document.body.appendChild(document.createElement("br"))
-    
+    // Csak a #container-hez adjuk hozzá
+    document.getElementById("container").appendChild(asd);
 }
 async function get(url) {
     const response = await fetch(url)
