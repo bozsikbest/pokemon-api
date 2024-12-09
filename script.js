@@ -1,5 +1,7 @@
 //console.log("hello")
-var count =1
+var count = 1
+var lista = []
+var pokes = []
 
 function asd(text, src) {
     const img = document.createElement("img")
@@ -16,17 +18,33 @@ function asd(text, src) {
     
     // Csak a #container-hez adjuk hozzá
     document.getElementById("container").appendChild(asd)
-    asd.setAttribute("hely", 1)
+    pokes.push(asd)
     asd.addEventListener('click', function(){
-        if(this.getAttribute("hely")==1){
-            document.getElementById("container2").appendChild(this)
-            this.setAttribute("hely", 2)
-     }else{
-        document.getElementById("container").appendChild(this) 
-        this.setAttribute("hely", 1)
+    if(document.getElementById("container")== this.parentElement){
+        document.getElementById("container2").appendChild(this)
+        lista.push(this.textContent)
+    }else{
+        document.getElementById("container").appendChild(this)
+        lista.splice(lista.indexOf(this.textContent), 1)
     }
-    })
+    console.log(lista)
+    localStorage.setItem("elemek", JSON.stringify(lista))
+    
+    
+})
 }
+
+function vissza(){
+    lista = JSON.parse(localStorage.getItem("elemek"))
+
+    for(i=0; i<pokes.length; i++){
+        for(j=0; j<lista.length; j++){
+        if(pokes[i].textContent == lista[j]){
+            document.getElementById("container2").appendChild(pokes[i])
+        }
+    }}
+}
+
 async function get(url) {
     const response = await fetch(url)
     //console.log(response)
@@ -44,7 +62,9 @@ async function get(url) {
     }
     //if(Data.next != null) get(Data.next)
     
-    
+    vissza()
 }
+
+
 
 get("https://pokeapi.co/api/v2/pokemon/")
