@@ -38,10 +38,10 @@ function vissza(){
     if(localStorage.getItem("elemek")!=null){
     lista = JSON.parse(localStorage.getItem("elemek"))
 }
-    for(i=0; i<pokes.length; i++){
-        for(j=0; j<lista.length; j++){
-        if(pokes[i].textContent == lista[j]){
-            document.getElementById("container2").appendChild(pokes[i])
+    for(i=0; i<lista.length; i++){
+        for(j=0; j<pokes.length; j++){
+        if(pokes[j].textContent == lista[i]){
+            document.getElementById("container2").appendChild(pokes[j])
         }
     }}
 }
