@@ -35,8 +35,9 @@ function asd(text, src) {
 }
 
 function vissza(){
+    if(localStorage.getItem("elemek")!=null){
     lista = JSON.parse(localStorage.getItem("elemek"))
-
+}
     for(i=0; i<pokes.length; i++){
         for(j=0; j<lista.length; j++){
         if(pokes[i].textContent == lista[j]){
