@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
     color: red;
     text-align: center;
 }
@@ -23,7 +23,8 @@ h1 {
     box-shadow: 5px 5px 12px 0px #c521e6;
 }
 
-#container {
+#container,
+#container2 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;

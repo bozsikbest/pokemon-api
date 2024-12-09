@@ -2,20 +2,30 @@
 var count =1
 
 function asd(text, src) {
-    const img = document.createElement("img");
+    const img = document.createElement("img")
     img.src = src;
 
-    const asd = document.createElement("div");
-    asd.textContent = text.charAt(0).toUpperCase() + text.slice(1);;
-    asd.append(document.createElement("br"));
-    asd.append(img);
-    asd.classList.add("pokemon");
+    const asd = document.createElement("div")
+    asd.textContent = text.charAt(0).toUpperCase() + text.slice(1)
+    asd.append(document.createElement("br"))
+    asd.append(img)
+    asd.classList.add("pokemon")
 
     asd.style.backgroundImage = 
-        "linear-gradient(rgb(201 201 201), rgb(247 247 247)), url('" + src + "')";
+        "linear-gradient(rgb(201 201 201), rgb(247 247 247)), url('" + src + "')"
     
     // Csak a #container-hez adjuk hozzá
-    document.getElementById("container").appendChild(asd);
+    document.getElementById("container").appendChild(asd)
+    asd.setAttribute("hely", 1)
+    asd.addEventListener('click', function(){
+        if(this.getAttribute("hely")==1){
+            document.getElementById("container2").appendChild(this)
+            this.setAttribute("hely", 2)
+     }else{
+        document.getElementById("container").appendChild(this) 
+        this.setAttribute("hely", 1)
+    }
+    })
 }
 async function get(url) {
     const response = await fetch(url)
