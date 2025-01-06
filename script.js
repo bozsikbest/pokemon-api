@@ -8,16 +8,23 @@ function asd(text, src) {
     img.src = src;
 
     const asd = document.createElement("div")
+    //asd.classList.add('csik')
     asd.textContent = text.charAt(0).toUpperCase() + text.slice(1)
     asd.append(document.createElement("br"))
     asd.append(img)
     asd.classList.add("pokemon")
+    //asd.setAttribute("transform", "scale(0)")
+
 
     asd.style.backgroundImage = 
         "linear-gradient(rgb(201 201 201), rgb(247 247 247)), url('" + src + "')"
     
     // Csak a #container-hez adjuk hozzá
-    document.getElementById("container").appendChild(asd)
+    img.addEventListener('load', function(){
+        document.getElementById("container").appendChild(asd)
+        //asd.setAttribute("transform", "scale(1)")
+        asd.classList.remove('hiA')
+    })
     pokes.push(asd)
     asd.addEventListener('click', function(){
     if(document.getElementById("container")== this.parentElement){

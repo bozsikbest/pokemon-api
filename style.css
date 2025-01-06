@@ -9,6 +9,7 @@ h1, h2 {
     border-radius: 15px;
     padding: 5px;
     max-width: fit-content;
+
     text-align: center;
     box-shadow: 2px 2px 8px 0px #0000007d;
   background-image: linear-gradient(rgb(201 201 201), rgb(247 247 247)),
@@ -16,7 +17,19 @@ h1, h2 {
   background-blend-mode: hard-light;
   background-size: 250%;
   background-position: center;
+  transition: all 1s ease ;
   
+  overflow: hidden;
+}
+@keyframes example {
+  0%   {transform:scale(1);}
+  50%  {transform:scale(.5)}
+  100% {transform:scale(1);opacity:1;}
+}
+
+
+.hiA{
+  animation: example 1s;
 }
 
 .pokemon:hover{
